@@ -5,14 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<RecyclerViewHolder> {
+public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
 
@@ -50,4 +46,22 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
     public abstract void onItemClick(View view, int position, ArrayList<Data> dataset);
 
     public abstract void onBindItemView(@NonNull RecyclerViewHolder holder, int position, ArrayList<Data> dataset);
+
+    public abstract static class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        private static final String TAG = "RecyclerViewHolder";
+
+        public RecyclerViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onItemClick(v, this.getAdapterPosition());
+        }
+
+        public abstract void onItemClick(View view, int position);
+    }
 }

@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.commology.dogfood.RecyclerViewAdapter;
-import com.commology.dogfood.RecyclerViewHolder;
 
 import java.util.ArrayList;
 
