@@ -1,5 +1,7 @@
 package com.commology.dogfood.httpinspector;
 
+import android.content.Intent;
+import android.sax.StartElementListener;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         ArrayList<String> dataset = new ArrayList<>();
+        dataset.add("Simple Browser");
         dataset.add("Beijing");
         dataset.add("Shanghai");
         dataset.add("Tianjin");
@@ -63,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClickItem(View view, int position, ArrayList<String> dataset) {
                 Toast.makeText(view.getContext(), "Clicked: " + dataset.get(position), Toast.LENGTH_SHORT).show();
+
+                Intent intent;
+                switch (position) {
+                    case 0:
+                        intent = new Intent(MainActivity.this, ActivitySimpleBrowser.class);
+                        view.getContext().startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
             }
 
             @Override
