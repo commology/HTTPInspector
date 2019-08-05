@@ -26,8 +26,8 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
         View view = LayoutInflater.from(parent.getContext()).inflate(mLayoutResID, parent, false);
         RecyclerViewHolder viewHolder = new RecyclerViewHolder(view) {
             @Override
-            public void onItemClick(View view, int position) {
-                RecyclerViewAdapter.this.onItemClick(view, position, mDataset);
+            public void onClickItem(View view, int position) {
+                RecyclerViewAdapter.this.onClickItem(view, position, mDataset);
             }
         };
         return viewHolder;
@@ -43,7 +43,7 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
         return mDataset.size();
     }
 
-    public abstract void onItemClick(View view, int position, ArrayList<Data> dataset);
+    public abstract void onClickItem(View view, int position, ArrayList<Data> dataset);
 
     public abstract void onBindItemView(@NonNull RecyclerViewHolder holder, int position, ArrayList<Data> dataset);
 
@@ -59,9 +59,9 @@ public abstract class RecyclerViewAdapter<Data> extends RecyclerView.Adapter<Rec
 
         @Override
         public void onClick(View v) {
-            onItemClick(v, this.getAdapterPosition());
+            onClickItem(v, this.getAdapterPosition());
         }
 
-        public abstract void onItemClick(View view, int position);
+        public abstract void onClickItem(View view, int position);
     }
 }

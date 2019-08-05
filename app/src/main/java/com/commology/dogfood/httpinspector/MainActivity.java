@@ -36,9 +36,32 @@ public class MainActivity extends AppCompatActivity {
         dataset.add("Tianjin");
         dataset.add("Guangzhou");
         dataset.add("Shenzhen");
+        dataset.add("Wuhan");
+        dataset.add("Chengdu");
+        dataset.add("Chongqing");
+        dataset.add("Zhengzhou");
+        dataset.add("Haikou");
+        dataset.add("Nanchang");
+        dataset.add("Nanjing");
+        dataset.add("Wuxi");
+        dataset.add("Suzhou");
+        dataset.add("Changzhou");
+        dataset.add("Hangzhou");
+        dataset.add("Qingdao");
+        dataset.add("Dalian");
+        dataset.add("Xining");
+        dataset.add("Yinchuan");
+        dataset.add("Shenyang");
+        dataset.add("Ningbo");
+        dataset.add("Fuzhou");
+        dataset.add("Xiamen");
+        dataset.add("Xining");
+        dataset.add("Wenzhou");
+        dataset.add("Anqing");
+        dataset.add("Hefei");
         recyclerViewAdapter = new RecyclerViewAdapter<String>(dataset, R.layout.main_view) {
             @Override
-            public void onItemClick(View view, int position, ArrayList<String> dataset) {
+            public void onClickItem(View view, int position, ArrayList<String> dataset) {
                 Toast.makeText(view.getContext(), "Clicked: " + dataset.get(position), Toast.LENGTH_SHORT).show();
             }
 
