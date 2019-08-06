@@ -8,12 +8,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/main_view_item_icon"
         android:src="@drawable/baseline_launch_24" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:id="@+id/test_text"
+        android:id="@+id/main_view_item_text"
         android:textSize="16dp" />
 
 </LinearLayout>
